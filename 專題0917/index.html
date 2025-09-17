@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <title>鯨魚王</title>
+		<link rel="stylesheet" href="css/style.css" media="all">
+	</head>
+    <body>
+
+        <!-- 導覽列 -->
+        <nav class="navbar">
+            <a href="index.html" class="brand">🐋 鯨魚王</a>
+            <div class="menu" id="menu">
+                <a href="index.html">鯨魚王</a>
+                <a href="daily.html">每日一鯨</a>
+                <a href="poster.html">海報主題</a>
+                <a href="news.html">最新消息</a>
+                <a href="guide.html">園區導覽</a>
+                <a href="location.html">位置訊息</a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <!-- 內容：圖片 + 標題 + 按鈕 -->
+        <div class="container">
+            <img src="img/whale.jpg" alt="鯨魚" class="whale-img">
+            <div class="title">鯨魚王</div>
+            <button class="start-btn" onclick="location.href='game.html'">開始遊戲</button>
+        </div>
+
+        <script>
+       
+          function toggleMenu(){
+            document.getElementById('menu').classList.toggle('active');
+          }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	font-family: sans-serif;
+	background: #7ddfff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+/* ===== 導覽列 ===== */
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(0, 90, 160, 0.95);
+	padding: 10px 15px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 999;
+}
+
+	.navbar .brand {
+		color: #fff;
+		font-size: 1.2rem;
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+.menu {
+	display: flex;
+	gap: 15px;
+}
+
+	.menu a {
+		color: #fff;
+		text-decoration: none;
+		font-size: 1rem;
+		padding: 5px 8px;
+	}
+/* 手機漢堡 */
+.hamburger {
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+	.hamburger span {
+		width: 25px;
+		height: 3px;
+		background: white;
+		margin: 4px 0;
+	}
+
+@media (max-width: 600px) {
+	.menu {
+		position: absolute;
+		top: 50px;
+		left: 0;
+		right: 0;
+		flex-direction: column;
+		background: rgba(0,90,160,0.95);
+		display: none;
+		padding: 10px 0;
+	}
+
+		.menu a {
+			padding: 10px 0;
+			text-align: center;
+		}
+
+		.menu.active {
+			display: flex;
+		}
+
+	.hamburger {
+		display: flex;
+	}
+}
+
+/* ===== 內容 ===== */
+.container {
+	position: relative;
+	width: 100%;
+	max-width: 500px;
+	margin-top: 60px; /* 預留導覽列高度 */
+}
+
+.whale-img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.title {
+	position: absolute;
+	top: 12%;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 2.2rem;
+	font-weight: bold;
+	background: rgba(139,69,19,0.85);
+	color: #fff;
+	padding: 6px 20px;
+	border-radius: 10px;
+}
+
+.start-btn {
+	position: absolute;
+	bottom: 15%;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 1.4rem;
+	padding: 12px 36px;
+	background: #ffb400;
+	color: #3b2a00;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+@media (max-width: 400px) {
+	.title {
+		font-size: 1.8rem;
+	}
+
+	.start-btn {
+		font-size: 1.1rem;
+		padding: 10px 28px;
+	}
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鯨魚問答</title>
+    <link rel="stylesheet" href="css/gamestyle.css" media="all">
+</head>
+<body>
+  <h1>鯨魚問答</h1>
+  <div class="question" id="question">載入題目中...</div>
+  <div class="timer" id="timer">10</div>
+  <input type="text" id="answer" placeholder="輸入答案">
+  <button class="submit-btn" onclick="checkAnswer()">送出</button>
+  <div id="result"></div>
+  <div class="score" id="score">分數：0</div>
+
+  <script>
+    const questions = [
+      { q: "世界上最大的哺乳動物是什麼？", a: "鯨魚" },
+      { q: "鯨魚是魚類嗎？(請以'是'或'不是'來回答)", a: "不是" },
+      { q: "鯨魚用什麼器官呼吸？", a: "肺" }
+    ];
+
+    let current = 0;
+    let score = 0;
+    let timeLeft = 10;
+    let timer;
+
+    function startGame() {
+      document.getElementById("question").innerText = questions[current].q;
+      timeLeft = 10;
+      document.getElementById("timer").innerText = timeLeft;
+      timer = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timer").innerText = timeLeft;
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          showResult(false);
+        }
+      }, 1000);
+    }
+
+    function checkAnswer() {
+      clearInterval(timer);
+      const userAnswer = document.getElementById("answer").value.trim();
+      if (userAnswer === questions[current].a) {
+        showResult(true);
+        score++;
+        document.getElementById("score").innerText = "分數：" + score;
+      } else {
+        showResult(false);
+      }
+    }
+
+    function showResult(correct) {
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerText = correct ? "✅ 答對了！" : "❌ 答錯囉！";
+      setTimeout(() => {
+        current++;
+        if (current < questions.length) {
+          document.getElementById("answer").value = "";
+          resultDiv.innerText = "";
+          startGame();
+        } else {
+          resultDiv.innerText = "🎉 遊戲結束！總分：" + score;
+        }
+      }, 1500);
+    }
+
+    startGame();
+  </script>
+</body>
+</html>

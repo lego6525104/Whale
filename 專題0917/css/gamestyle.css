@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	font-family: sans-serif;
+	background: linear-gradient(#7ddfff, #3ab9ff);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	text-align: center;
+}
+
+h1 {
+	margin-bottom: 20px;
+}
+
+.question {
+	font-size: 1.8rem;
+	margin: 20px;
+}
+
+.timer {
+	font-size: 2rem;
+	color: red;
+}
+
+input {
+	padding: 8px;
+	font-size: 1.2rem;
+}
+
+.submit-btn {
+	padding: 10px 20px;
+	margin-top: 10px;
+	font-size: 1rem;
+}
+
+.score {
+	font-size: 1.4rem;
+	margin-top: 15px;
+}
