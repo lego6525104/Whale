@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>鯨魚 AR 快速示範</title>
+
+  <!-- 直接引用 Google 的 model-viewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #87cefa, #ffffff);
+      font-family: "Noto Sans TC", sans-serif;
+      text-align: center;
+    }
+    h1 { margin: 1rem 0; color: #004d80; }
+    model-viewer {
+      width: 100%;
+      height: 480px;
+      --poster-color: transparent;
+    }
+    p { font-size: 0.9rem; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>🐋 超酷鯨魚 AR</h1>
+
+  <model-viewer
+    src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Whale/glTF-Binary/Whale.glb"
+    alt="藍鯨 3D"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    style="background:#e0f7fa;">
+  </model-viewer>
+
+  <p>📱 用手機打開 → 點「在你的空間中檢視」馬上看到鯨魚漂浮在房間！</p>
+</body>
+</html>
